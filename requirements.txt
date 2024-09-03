@@ -1,0 +1,7 @@
+numpy<2
+git+https://github.com/aleixalcacer/archetypes.git@ada
+matplotlib
+scikit-learn
+scikit-fda
+pandas
+jupyter
