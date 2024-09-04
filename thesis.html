@@ -365,6 +365,7 @@ Aleix Alcacer Sales
 <ul>
 <li><a href="#/introduction" id="/toc-introduction">Introduction</a></li>
 <li><a href="#/preliminaries" id="/toc-preliminaries">Preliminaries</a></li>
+<li><a href="#/contributions" id="/toc-contributions">Contributions</a></li>
 </ul>
 </nav>
 </section>
@@ -373,23 +374,42 @@ Aleix Alcacer Sales
 <h1>Introduction</h1>
 
 </section>
-<section id="the-concept-of-archetype" class="slide level2">
+<section id="the-concept-of-archetype" class="slide level2 scrollable">
 <h2>The concept of <em>archetype</em></h2>
-<p>An <em>archetype</em> is an original pattern or model from which copies are made; a prototype.</p>
+<ul>
+<li><p>Etymologically, the term <em>archetype</em> is derived from the Ancient Greek <em>árkhō</em> ‘to begin’ and <em>túpos</em> ‘sort, type’.</p></li>
+<li><p>Some definitions of <em>archetype</em> include:</p>
+<ol type="1">
+<li>a very typical example of a certain person or thing (<em>Oxford Dictionary</em>).</li>
+<li>a typical example of something, or the original model of something from which others are copied (<em>Cambridge Dictionary</em>).</li>
+<li>the original pattern or model of which all things of the same type are representations or copies (<em>Merriam-Webster Dictionary</em>).</li>
+</ol></li>
+</ul>
+<br><br>
+<div style="text-align: center; font-size: 1.1em">
+<p><strong>“An <em>archetype</em> is a typical form or prototype that other objects copy or emulate”</strong></p>
+</div>
 </section>
 <section id="example-inside-out" class="slide level2">
 <h2>Example: <em>Inside Out</em></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="static/introduction/inside_out_all.png" style="width:30.0%"></p>
-<figcaption>Archetypal emotions in <em>Inside Out</em> movie</figcaption>
-</figure>
-</div>
-</section>
+<p>In the movie, the main character, Riley, has five archetypal emotions: Joy, Sadness, Fear, Anger, and Disgust.</p>
+
+<img data-src="static/introduction/inside_out_all.png" class="r-stretch quarto-figure-center"><p class="caption">Archetypal emotions in <em>Inside Out</em> movie</p></section>
 <section class="slide level2">
 
+<p>However, as seen in <em>Inside Out 2</em>, not only exists these emotions, but also new emotions can be obtained by combining these:</p>
 
-<img data-src="static/introduction/inside_out.png" class="r-stretch quarto-figure-center"><p class="caption">New emotions obtained from combining the archetypal emotions</p></section>
+<img data-src="static/introduction/inside_out_mixed.png" class="r-stretch quarto-figure-center"><p class="caption">Mixed emotions in <em>Inside Out 2</em></p></section>
+<section class="slide level2">
+
+<p>Therefore, how can we obtain these new emotions?</p>
+
+<img data-src="static/introduction/inside_out.png" class="r-stretch quarto-figure-center"><p class="caption">New emotions obtained from combining the archetypal emotions</p></section></section>
+<section>
+<section id="preliminaries" class="title-slide slide level1 center">
+<h1>Preliminaries</h1>
+
+</section>
 <section id="motivation-of-work" class="slide level2">
 <h2>Motivation of work</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -398,11 +418,6 @@ Aleix Alcacer Sales
 <figcaption>Number of publications containing the “archetypal analysis” keyword over the years. Data has been collected from Google Scholar.</figcaption>
 </figure>
 </div>
-</section></section>
-<section>
-<section id="preliminaries" class="title-slide slide level1 center">
-<h1>Preliminaries</h1>
-
 </section>
 <section id="machine-learning" class="slide level2">
 <h2>Machine Learning</h2>
@@ -29944,12 +29959,145 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="contributions" class="title-slide slide level1 center">
+<h1>Contributions</h1>
+
+</section>
+<section class="slide level2 scrollable">
+
+<h3 id="a-data-driven-classification-of-3d-foot-types-by-archetypal-shapes-based-on-landmarks-1">A data-driven classification of 3D foot types by archetypal shapes based on landmarks <sup>1</sup></h3>
+<div class="columns">
+<div class="column" style="width:80%;">
+<h4 id="objectives">Objectives</h4>
+<ul>
+<li>Develop a data-driven methodology to classify 3D foot shapes into distinct types.</li>
+<li>Provide an objective and quantifiable approach to foot typology for enhanced footwear design.</li>
+</ul>
+</div><div class="column" style="width:20%;">
+<img data-src="static/plosone/figura10.png" class="r-stretch">
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Published as: A data-driven classification of 3D foot types by archetypal shapes based on landmarks. Aleix Alcacer Sales, Irene Epifanio López, María Victoria Ibáñez Gual, Amelia Simó Vidal, Alfredo Ballester. PLOS ONE. Num. 1. Vol. 15. 2020.</p></li></ol></aside></section>
+<section class="slide level2">
+
+<h4 id="data-collection">Data Collection</h4>
+<ul>
+<li>Dataset: 775 3D right foot scans (Spanish adult population).</li>
+<li>Landmarks: Each foot represented by 5626 3D landmarks.</li>
+</ul>
+
+<img data-src="static/plosone/figura12.png" class="r-stretch quarto-figure-center"><p class="caption">Example of the landmarks used in the study</p></section>
+<section class="slide level2">
+
+<h4 id="data-normalization">Data Normalization</h4>
+<ul>
+<li>Location Removal: Centered using the Helmert sub-matrix.</li>
+<li>Scale Normalization: Applied via Frobenius norm (centroid size).</li>
+<li>Rotation Removal: Obtained using the Procrustes distance and projections onto the tangent space.</li>
+</ul>
+
+<img data-src="static/plosone/pies1.png" class="r-stretch quarto-figure-center"><p class="caption">Three feet with the same shape.</p></section>
+<section class="slide level2">
+
+<h4 id="archetypoid-analysis-ada-1">Archetypoid Analysis (ADA)</h4>
+<ul>
+<li>Process: Identify extreme patterns (archetypal shapes) from data.</li>
+<li>Gender-Specific Analysis: Separate analysis for male and female feet.</li>
+<li>Validation: Results compared against traditional clustering techniques.</li>
+</ul>
+
+<img data-src="static/plosone/fig10.png" class="r-stretch quarto-figure-center"><p class="caption">Data represented as convex combinations of archetypal shapes.</p></section>
+<section class="slide level2">
+
+<h4 id="conclusions">Conclusions</h4>
+<ul>
+<li>Key Findings
+<ul>
+<li>Identification of three archetypal foot shapes for both men and women.</li>
+</ul></li>
+<li>Implications
+<ul>
+<li>Enhanced footwear design to accommodate a wider range of foot shapes.</li>
+</ul></li>
+<li>Broader Application
+<ul>
+<li>Methodology applicable to other fields requiring precise anthropometric data.</li>
+</ul></li>
+</ul>
+
+<img data-src="static/plosone/fig9.png" class="r-stretch quarto-figure-center"><p class="caption">Archetypal foot shapes</p></section>
+<section class="slide level2 scrollable">
+
+<h3 id="combining-classification-and-user-based-collaborative-filtering-for-matching-footwear-size-2">Combining Classification and User-Based Collaborative Filtering for Matching Footwear Size <sup>1</sup></h3>
+<h4 id="objectives-1">Objectives</h4>
+<ul>
+<li>Develop a hybrid approach combining classification methods and user-based collaborative filtering for accurate footwear size recommendation.</li>
+<li>Improve size prediction by integrating 3D foot measurements, user preferences, and past purchases, improving both accuracy and user satisfaction in online footwear purchases.</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Published as: Combining classification and user-based collaborative filtering for matching footwear size. Aleix Alcacer Sales, Irene Epifanio López, Jorge Valero, Alfredo Ballester. MATHEMATICS. Num. 7. Vol. 9. 2021.</p></li></ol></aside></section>
+<section class="slide level2">
+
+<h4 id="data-collection-1">Data Collection</h4>
+<ul>
+<li>Dataset
+<ul>
+<li>36 right foot scans from Spanish men using a low-cost 3D foot digitizer (DomeScan).</li>
+</ul></li>
+<li>Features
+<ul>
+<li>Foot Measurements: Includes variables like Foot Length (FL), Ball Width (BW), and Instep Height (IH).</li>
+<li>User Preference: Estimation whether the user prefers a tight, normal, or loose fit.</li>
+<li>Past Purchases: Historical data on footwear size and user satisfaction.</li>
+<li>Missing Data: 29% of past purchases had missing size information.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h4 id="proposed-methods">Proposed methods</h4>
+<ul>
+<li>CO-methods: Inpute missing data + Classifier.</li>
+<li>EN-methods: Combine results from multiple classifiers.</li>
+</ul>
+
+<img data-src="static/mathematics/graph.jpg" class="r-stretch quarto-figure-center"><p class="caption">Overview of the recommended system framework</p></section>
+<section class="slide level2">
+
+<h4 id="validation">Validation</h4>
+<ul>
+<li>Scenarios: Tested on real data and simulated scenarios to assess performance across different conditions.</li>
+</ul>
+
+<img data-src="static/mathematics/table.png" class="r-stretch quarto-figure-center"><p class="caption">Comparison of the performance of the proposed models for a synthetic scenario</p></section>
+<section class="slide level2">
+
+<h4 id="conclusions-1">Conclusions</h4>
+<ul>
+<li>Key Findings
+<ul>
+<li>Unsupervised statistical methods are used for the first time in inputing missing data.</li>
+<li>The proposed ensembled models outperforms individual classifiers.</li>
+</ul></li>
+<li>Implications
+<ul>
+<li>Improved size recommendation can significantly reduce returns due to size mismatch, enhancing customer satisfaction in online footwear retail.</li>
+</ul></li>
+<li>Broader Application
+<ul>
+<li>The methodologies can be extended to other domains requiring personalized recommendations based on user preferences and historical data.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
 </section></section>
+
     </div>
   </div>
 
