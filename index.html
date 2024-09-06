@@ -438,7 +438,7 @@ Aleix Alcacer Sales
 <div>
 
 </div>
-<div id="cell-7" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="2">
+<div id="cell-7" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="3">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -29944,7 +29944,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <div>
 
 </div>
-<div id="cell-36" class="cell quarto-layout-panel" data-execution_count="16" data-layout-ncol="2">
+<div id="cell-36" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="16">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -30392,6 +30392,130 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </section>
 <section class="slide level2">
 
+<h3 id="co-clustering-through-a-new-prism-comparing-biarchetypal-analysis-and-stochastic-block-models">Co-Clustering Through a New Prism: Comparing Biarchetypal Analysis and Stochastic Block Models</h3>
+<h4 id="objectives-6">Objectives</h4>
+<ul>
+<li>Compare Biarchetypal Analysis (BiAA) with Stochastic Block Models (SBM) for co-clustering.</li>
+<li>Introduce hard assignment and degree correction to enhance co-clustering performance.</li>
+<li>Develop a new algorithm for BiAA, optimized for large datasets.</li>
+<li>Extend BiAA to handle <span class="math inline">n</span>-dimensional data for complex, high-dimensional datasets.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h4 id="enhancements">Enhancements</h4>
+<ul>
+<li>Scalable algorithm
+<ul>
+<li>Uses gradient-based optimization for faster processing of large datasets.</li>
+</ul></li>
+</ul>
+
+<img data-src="static/coclust/performance_results.png" class="r-stretch quarto-figure-center"><p class="caption">Performance comparison between BiAA algorithms</p></section>
+<section class="slide level2">
+
+<ul>
+<li>Multi-dimensional datasets
+<ul>
+<li>Extended to n-dimensional data using tensor decomposition for more complex structures.</li>
+</ul></li>
+</ul>
+<p><span class="math display">
+    \argmin_{\mathcal{B}^{(1)}, \dots, \mathcal{B}^{(N)}, \mathcal{A}^{(1)},\dots, \mathcal{A}^{(N)}}  \left \|\left(\mathcal{X} - (\mathcal{X} \times_1 \mathcal{B}^{(1)} \dots \times_N \mathcal{B}^{(N)})\times_1\mathcal{A}^{(1)} \dots \times_N \mathcal{A}^{(N)}\right)\right \|^2_F
+</span></p>
+<p>subject to:</p>
+<ul>
+<li><span class="math inline">\sum_{k=1}^{K_n} \mathcal{A}^{(n)}_{ki} = 1</span> with <span class="math inline">\mathcal{A}^{(n)}_{ki} \in [0, 1]</span> for each <span class="math inline">i=1,\dots, I_n</span> and <span class="math inline">n=1,\dots,N</span>.</li>
+<li><span class="math inline">\sum_{i=1}^{I_n} \mathcal{B}^{(n)}_{ik} = 1</span> with <span class="math inline">\mathcal{B}^{(n)}_{ik} \in [0, 1]</span> for each <span class="math inline">k=1,\dots, K_n</span> and <span class="math inline">n=1,\dots,N</span>.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Hard Assignment
+<ul>
+<li>Forces each element into a single archetype or community.</li>
+</ul></li>
+</ul>
+<p><span class="math display">
+\argmin_{{\bf A}, {\bf B}, {\bf C}, {\bf D}} \left \| {\bf X} - {\bf {\bf A} {\bf B} X {\bf C} {\bf D}}\right \|^2_F
+</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\|{\bm{{A}}_n}\|_1 = 1</span>, <span class="math inline">\bm{{A}}_{n,k} \in \{0, 1\}</span>.</li>
+<li><span class="math inline">\|{\bm{B}_k}\|_1 = 1</span>, <span class="math inline">\bm{{B}}_{k,n} \in [0, 1]</span>.</li>
+<li><span class="math inline">\|{\bm{C}_c}\|_1 = 1</span>, <span class="math inline">\bm{{C}}_{m,c} \in [0, 1]</span>.</li>
+<li><span class="math inline">\|{\bm{D}_m}\|_1 = 1</span>, <span class="math inline">\bm{{D}}_{c, m} \in \{0, 1\}</span>.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Degree Correction
+<ul>
+<li>Adjusts for varying node degrees to improve co-clustering accuracy.</li>
+</ul></li>
+</ul>
+<p><span class="math display">
+\argmin_{{\bf a}, {\bf A}, {\bf B}, {\bf C}, {\bf D}, {\bf d}} \left \| {\bf X} - {\bf a \odot {\bf A} {\bf B} X {\bf C} {\bf D} \odot d} \right \|^2_F
+</span> where</p>
+<ul>
+<li><span class="math inline">\|{\bm{{a}}}\|_1 = 1</span>, <span class="math inline">\bm{{a}}_{n} \in [0, 1]</span>.</li>
+<li><span class="math inline">\|{\bm{{A}}_n}\|_1 = 1</span>, <span class="math inline">\bm{{A}}_{n,k} \in \{0, 1\}</span>.</li>
+<li><span class="math inline">\|{\bm{B}_k}\|_1 = 1</span>, <span class="math inline">\bm{{B}}_{k,n} \in [0, 1]</span>.</li>
+<li><span class="math inline">\|{\bm{C}_c}\|_1 = 1</span>, <span class="math inline">\bm{{C}}_{m,c} \in [0, 1]</span>.</li>
+<li><span class="math inline">\|{\bm{D}_m}\|_1 = 1</span>, <span class="math inline">\bm{{D}}_{c, m} \in \{0, 1\}</span>.</li>
+<li><span class="math inline">\|{\bm{{d}}}\|_1 = 1</span>, <span class="math inline">\bm{{d}}_{m} \in [0, 1]</span>.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h4 id="experiments">Experiments</h4>
+<ul>
+<li>Synthetic datasets
+<ul>
+<li>Simulated data with varying community structures memberships and noise levels.</li>
+</ul></li>
+<li>Real-world datasets
+<ul>
+<li>Restaurants-Users, Drugs-Side Effects, Authors-Publications networks.</li>
+</ul></li>
+</ul>
+
+<img data-src="static/coclust/restaurants_boxplot.png" class="r-stretch quarto-figure-center"><p class="caption">Restaurant-Users network results</p></section>
+<section class="slide level2">
+
+<h4 id="conclusions-6">Conclusions</h4>
+<ul>
+<li>Key Findings
+<ul>
+<li>The new BiAA algorithm outperforms SBM, especially in detecting extremes and handling complex structures.</li>
+<li>Degree correction and soft assignment improve clustering accuracy.</li>
+<li>The new algorithm scales better for large datasets.</li>
+</ul></li>
+<li>Implications
+<ul>
+<li>BiAA’s strengths in extreme detection benefit community detection, network analysis, and recommender systems.</li>
+</ul></li>
+<li>Broader Application
+<ul>
+<li>Apply <span class="math inline">n</span>-dimensional BiAA to biological networks and multi-modal data</li>
+<li>Integrate Variational Autoencoders for enhanced versatility with datasets like images and fMRI.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="archetypes-a-python-package-for-archetypal-analysis"><code>archetypes</code>: A Python package for archetypal analysis</h3>
+<p><code>archetypes</code> is a Python package offering a user-friendly and efficient implementation of state-of-the-art techniques for Archetypal Analysis (AA).</p>
+<ul>
+<li>Implements multiple archetype initialization algorithms.</li>
+<li>Supports a variety of AA algorithms.</li>
+<li>Provides multiple backends, including numpy, jax, and torch.</li>
+<li>Runs seamlessly on both CPU and GPU.</li>
+<li>Integrates diverse visualization tools for enhanced result interpretation.</li>
+<li>Fully open-source and community-driven project.</li>
+</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
