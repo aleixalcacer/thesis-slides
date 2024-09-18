@@ -348,14 +348,17 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">New developments and applications of archetypal analysis</h1>
-  <p class="subtitle">PhD Thesis Defense</p>
+  <p class="subtitle">PhD Thesis Defense with industrial and international mention</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Aleix Alcacer Sales 
 </div>
-</div>
+        <p class="quarto-title-affiliation">
+            Universitat Jaume I
+          </p>
+    </div>
 </div>
 
   <p class="date">Friday, September 27, 2024</p>
@@ -30031,7 +30034,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </ul></li>
 <li>Broader Application
 <ul>
-<li>Methodology applicable to other fields requiring precise anthropometric data.</li>
+<li>Methodology applicable to other fields.</li>
 </ul></li>
 </ul>
 
@@ -30121,7 +30124,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <li>FH + LDA-ID: Combines Frank and Hall’s method with Linear Discriminant Analysis for Interval Data.</li>
 <li>DI + <span class="math inline">wkNN</span>: Weighted k-Nearest-Neighbor using distance-based measures for IVD and IVF.</li>
 <li>KPCA + POLR: Kernel Principal Component Analysis followed by Proportional Odds Logistic Regression.</li>
-<li>KIOF: Kernel-Induced Ordinal Forest, extending Random Forest to ordinal classification.</li>
+<li>KIOF: Kernel-induced Ordinal Forest, extending Kernel-induced Random Forest to ordinal classification.</li>
 <li>POLR-I &amp; POLR-I2: Extensions of POLR using interval bounds separately.</li>
 </ul>
 </section>
@@ -30202,7 +30205,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </ul></li>
 <li>Quantization Methods
 <ul>
-<li>Fuzzy Clustering: Assigns data points to groups based on theirs centroids.</li>
+<li>Fuzzy Clustering: Assigns data points to groups based on their centroids.</li>
 <li>Archetypal Analysis: Identifies archetypes and represents the data as combinations of these archetypes.</li>
 </ul></li>
 </ul>
@@ -30245,11 +30248,12 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <section class="slide level2">
 
 <h3 id="outlier-detection-of-clustered-functional-data-with-image-processing-applications-by-archetype-analysis">Outlier Detection of Clustered Functional Data with Image Processing Applications by Archetype Analysis</h3>
+
 <h4 id="objectives-4">Objectives</h4>
 <div class="columns">
 <div class="column" style="width:65%;">
 <ul>
-<li>Develop a methodology for detecting outliers in clustered functional data.</li>
+<li>Develop a methodology for detecting outliers in clustered functional data, a situation in which previous methods have shown limitations as it is really challenging.</li>
 <li>Extend the <em>AA + kNN</em> technique to handle multivariate and multi-argument functions.</li>
 <li>Apply the method to real-world image and signal processing tasks.</li>
 </ul>
@@ -30261,7 +30265,9 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </figure>
 </div>
 </div></div>
-</section>
+<aside><div>
+<p>Outlier Detection of Clustered Functional Data with Image Processing Applications by Archetype Analysis. Aleix Alcacer Sales, Irene Epifanio López. Submitted to PLOS ONE in second revision.</p>
+</div></aside></section>
 <section class="slide level2">
 
 <h4 id="faa-knn-algorithm">FAA + kNN Algorithm</h4>
@@ -30284,7 +30290,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 
 <h4 id="applications">Applications</h4>
 <ul>
-<li>Tested on simulated data and real-world tasks such as aircraft shape classification and electrocardiogram (ECG) analysis.</li>
+<li>Tested on simulated data and real-world tasks such as aircraft shapes analysis and electrocardiogram (ECG) analysis.</li>
 </ul>
 
 <img data-src="static/outliers/outliers-2.png" class="r-stretch quarto-figure-center"><p class="caption">ECG analysis example</p></section>
@@ -30299,11 +30305,11 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </ul></li>
 <li>Implications
 <ul>
-<li>Effective for applications in computer vision, signal processing, and anomaly detection in complex datasets.</li>
+<li>Effective for applications in computer vision, signal processing, anomaly detection, remote sensing or medical images.</li>
 </ul></li>
 <li>Broader Application
 <ul>
-<li>Extend to multi-modal and mixed-type datasets (e.g., combining functional, numerical, and categorical data).</li>
+<li>Extend to other kind of data (sparse functional data, ordinal and binary data, missing data, etc).</li>
 </ul></li>
 </ul>
 </section>
@@ -30324,7 +30330,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <h4 id="model-framework">Model framework</h4>
 <ul>
 <li>Extend Archetype Analysis (AA) to obtain arcehtypes in both observations and features.</li>
-<li>Despite beeing similar to biclustering, biAA focuses on archetypes instead of centroids, providing more interpretable results.</li>
+<li>Despite being similar to biclustering, biAA focuses on archetypes instead of centroids, providing more interpretable results.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -30386,7 +30392,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </ul></li>
 <li>Broader Application
 <ul>
-<li>Expand biAA to handle more complex datasets, including those with mixed data types.</li>
+<li>Expand biAA to handle more complex datasets, such as defining biarchetypoid analysis.</li>
 <li>Apply biAA to more real-world problems where interpretability of extreme data points is critical.</li>
 </ul></li>
 </ul>
@@ -30508,6 +30514,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <section class="slide level2">
 
 <h3 id="archetypes-a-python-package-for-archetypal-analysis"><code>archetypes</code>: A Python package for archetypal analysis</h3>
+
 <p><code>archetypes</code> is a Python package offering a user-friendly and efficient implementation of state-of-the-art techniques for Archetypal Analysis (AA).</p>
 <ul>
 <li>Implements multiple archetype initialization algorithms.</li>
@@ -30517,7 +30524,9 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <li>Integrates diverse visualization tools for enhanced result interpretation.</li>
 <li>Fully open-source and community-driven project.</li>
 </ul>
-</section></section>
+<aside><div>
+<p><a href="https://archetypes.readthedocs.io/">https://archetypes.readthedocs.io/</a></p>
+</div></aside></section></section>
 <section>
 <section id="conclusions-7" class="title-slide slide level1 center">
 <h1>Conclusions</h1>
@@ -30576,25 +30585,17 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <li>Propose methodologies for robust BiAA.</li>
 <li>Detect and visualize outliers in high-dimensional functional data using archetype-based methods, with applications in neuroimaging.</li>
 <li>Extend BiAA to nominal and ordinal data by defining biarchetypoid analysis and applying it to educational data.</li>
-<li>Extend archetype analysis to mixed and complex data types (e.g., health data, trees, complex networks).</li>
 <li>Propose methodologies for regularized and fair archetypal analysis.</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 id="thank-you">Thank You!</h3>
-<br><br>
-<div style="text-align: center; font-size: 1.1em">
-<p>Arcehtypal analysis capture extreme data patterns, providing insightful representations for applications like community detection and recommendation systems</p>
+<h3 id="questions">Questions?</h3>
+<div style="text-align: center;">
+<img data-src="static//thank-you.png" class="r-stretch">
 </div>
-<p><br><br></p>
-<div style="text-align: center; font-size: 2em">
-<p><strong>Questions?</strong></p>
-</div>
-</section>
-<section class="slide level2">
-
 <div class="quarto-auto-generated-content">
+<p><img src="static/simbol-UJI-color.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
