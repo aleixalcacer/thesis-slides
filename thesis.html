@@ -369,7 +369,7 @@ Aleix Alcacer Sales
 <li><a href="#/introduction" id="/toc-introduction">Introduction</a></li>
 <li><a href="#/preliminaries" id="/toc-preliminaries">Preliminaries</a></li>
 <li><a href="#/contributions" id="/toc-contributions">Contributions</a></li>
-<li><a href="#/conclusions-7" id="/toc-conclusions-7">Conclusions</a></li>
+<li><a href="#/conclusions" id="/toc-conclusions">Conclusions</a></li>
 </ul>
 </nav>
 </section>
@@ -29900,28 +29900,6 @@ BY2Bl4iIiIgKGgMvERERERU0Bl4iIiIiKmj/H/MV9pL8ON1iAAAAAElFTkSuQmCC\
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<p>This formulation also involves the same matrices of coefficients: <span class="math inline">\bm{{B}}</span>, which defines the archetypoids as some specific data points, and <span class="math inline">\bm{{A}}</span>, which represents each data point as a mixture of archetypoids.</p>
-<p>In matrix notation, archetypoid analysis can also be expressed as: <span class="math display"> \bm{X} \approx \bm{A} \bm{Z} = \bm{A} (\bm{B} \bm{X})</span></p>
-</section>
-<section class="slide level2 scrollable">
-
-<h3 id="computation-1">Computation</h3>
-<p><span class="math display"> \argmin_{\bm{A}, \bm{B}} \|{\bm{X} - \bm{A}\bm{B}\bm{X}}\|^2_F </span> where <span class="math inline">\|{\bm{{A}}_n}\|_1 = 1</span>, <span class="math inline">\bm{{A}}_{n,k} \in [0, 1]</span>, <span class="math inline">\|{\bm{B}_k}\|_1 = 1</span> and <span class="math inline">\bm{{B}}_{k,n} \in \{0, 1\}</span>.</p>
-<p><strong>Steps</strong></p>
-<ol type="1">
-<li>Initialize archetypes</li>
-<li>Loop until error reduction is sufficiently small:
-<ol type="1">
-<li>Approximate <span class="math inline">\bm{X}</span> as convex combinations of <span class="math inline">\bm{Z}</span>, i.e.&nbsp;optimize <span class="math inline">\bm{A}</span>.</li>
-<li>Update archetypes, i.e.&nbsp;<span class="math inline">\bm{Z} = \bm{A}^{-1} \bm{X}</span>.</li>
-<li>Represent <span class="math inline">\bm{Z}</span> as elements of <span class="math inline">\bm{X}</span>, i.e.&nbsp;optimize <span class="math inline">\bm{B}</span>.</li>
-<li>Update archetypes, i.e.&nbsp;<span class="math inline">\bm{Z} = \bm{B}\bm{X}</span>.</li>
-<li>Compute error <span class="math inline">\|{\bm{X} - \bm{A}\bm{B}\bm{X}}\|^2_F</span>.</li>
-</ol></li>
-</ol>
-</section>
 <section id="functional-archetypal-analysis-faa-and-fada" class="slide level2">
 <h2>Functional Archetypal analysis (FAA and FADA)</h2>
 <p>In this approach, each function <span class="math inline">x^{(n)}(t)</span> is expressed as a linear combination of a set of known basis functions <span class="math inline">\mathfrak{J}(t) = \{j^{(1)}(t), j^{(2)}(t), \dots, j^{(M)}(t)\}</span>. The expression for each function is given by: <span class="math display">
@@ -29948,7 +29926,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <div>
 
 </div>
-<div id="cell-36" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="16">
+<div id="cell-34" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="16">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -29995,8 +29973,8 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 
 <h4 id="data-collection">Data Collection</h4>
 <ul>
-<li>Dataset: 775 3D right foot scans (Spanish adult population).</li>
-<li>Landmarks: Each foot represented by 5626 3D landmarks.</li>
+<li>775 3D right foot scans (Spanish adult population).</li>
+<li>Each foot represented by 5626 3D landmarks.</li>
 </ul>
 
 <img data-src="static/plosone/figura12.png" class="r-stretch quarto-figure-center"><p class="caption">Example of the landmarks used in the study</p></section>
@@ -30012,29 +29990,17 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <img data-src="static/plosone/pies1.png" class="r-stretch quarto-figure-center"><p class="caption">Three feet with the same shape.</p></section>
 <section class="slide level2">
 
-<h4 id="archetypoid-analysis-ada-1">Archetypoid Analysis (ADA)</h4>
+<h4 id="results">Results</h4>
 <ul>
-<li>Process: Identify extreme patterns (archetypal shapes) from data.</li>
-<li>Gender-Specific Analysis: Separate analysis for male and female feet.</li>
-<li>Validation: Results compared against traditional clustering techniques.</li>
-</ul>
-
-<img data-src="static/plosone/fig10.png" class="r-stretch quarto-figure-center"><p class="caption">Data represented as convex combinations of archetypal shapes.</p></section>
-<section class="slide level2">
-
-<h4 id="conclusions">Conclusions</h4>
+<li>Process
 <ul>
+<li>Identify extreme patterns (archetypal shapes) from data.</li>
+<li>Comapre results against traditional clustering techniques.</li>
+</ul></li>
 <li>Key Findings
 <ul>
-<li>Identification of three archetypal foot shapes for both men and women.</li>
-</ul></li>
-<li>Implications
-<ul>
+<li>The identification of three archetypal foot shapes for both men and women.</li>
 <li>Enhanced footwear design to accommodate a wider range of foot shapes.</li>
-</ul></li>
-<li>Broader Application
-<ul>
-<li>Methodology applicable to other fields.</li>
 </ul></li>
 </ul>
 
@@ -30055,10 +30021,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 
 <h4 id="data-collection-1">Data Collection</h4>
 <ul>
-<li>Dataset
-<ul>
 <li>36 right foot scans from Spanish men using a low-cost 3D foot digitizer (DomeScan).</li>
-</ul></li>
 <li>Features
 <ul>
 <li>Foot Measurements: Includes variables like Foot Length (FL), Ball Width (BW), and Instep Height (IH).</li>
@@ -30079,30 +30042,33 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <img data-src="static/mathematics/graph.jpg" class="r-stretch quarto-figure-center"><p class="caption">Overview of the recommended system framework</p></section>
 <section class="slide level2">
 
-<h4 id="validation">Validation</h4>
+<h4 id="results-1">Results</h4>
 <ul>
-<li>Scenarios: Tested on real data and simulated scenarios to assess performance across different conditions.</li>
+<li>Tested on real data and simulated scenarios to assess performance across different conditions.</li>
 </ul>
 
-<img data-src="static/mathematics/table.png" class="r-stretch quarto-figure-center"><p class="caption">Comparison of the performance of the proposed models for a synthetic scenario</p></section>
-<section class="slide level2">
-
-<h4 id="conclusions-1">Conclusions</h4>
-<ul>
+<img data-src="static/mathematics/table.png" class="r-stretch quarto-figure-center"><p class="caption">Comparison of the performance of the proposed models for a synthetic scenario</p><ul>
 <li>Key Findings
 <ul>
 <li>Some methods based on clustering and archetype analysis are used for the first time as user-based collaborative filtering and these in imputing missing data.</li>
 <li>The proposed ensembled models outperforms individual classifiers.</li>
 </ul></li>
-<li>Implications
+</ul>
+<aside class="notes">
 <ul>
 <li>Improved size recommendation can significantly reduce returns due to size mismatch, enhancing customer satisfaction in online footwear retail.</li>
-</ul></li>
-<li>Broader Application
-<ul>
-<li>The methodologies can be extended to other domains requiring personalized recommendations based on user preferences and historical data.</li>
-</ul></li>
 </ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
@@ -30132,7 +30098,8 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 
 <h4 id="data-evaluation">Data &amp; Evaluation</h4>
 <ul>
-<li>Real-World Data: Applications on global development indices and meteorological data from Catalonia.</li>
+<li><p>Simulated Data: Synthetic datasets with 3 and 4 ordered classes.</p></li>
+<li><p>Real-World Data: Applications on global development indices and meteorological data from Catalonia.</p></li>
 </ul>
 <div class="columns">
 <div class="column" style="width:39.75%;">
@@ -30150,37 +30117,20 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </figure>
 </div>
 </div></div>
-<ul>
-<li>Simulated Data: Synthetic datasets with 3 and 4 ordered classes.</li>
-</ul>
 </section>
 <section class="slide level2">
 
-<h4 id="results">Results</h4>
+<h4 id="results-2">Results</h4>
 <ul>
-<li>Performance Metrics: Accuracy, precision, recall, and F1 score across 50 different train-test splits.</li>
-</ul>
-
-<img data-src="static/interval/results.png" class="r-stretch quarto-figure-center"><p class="caption">Accuracy of the proposed methods on meteorological data</p></section>
-<section class="slide level2">
-
-<h4 id="conclusions-2">Conclusions</h4>
-<ul>
-<li>Key Findings
+<li><p>Performance Metrics: Accuracy, precision, recall, and F1 score across 50 different train-test splits.</p></li>
+<li><p>Key Findings</p>
 <ul>
 <li>KIOF (also DI + <span class="math inline">wkNN</span> and KPCA + POLR) consistently delivers the best performance across different datasets.</li>
 <li>The inclusion of interval information and ordinal structure improves classification accuracy.</li>
 </ul></li>
-<li>Implications
-<ul>
-<li>Enhanced prediction capabilities for ordinal classification problems using interval and functional data.</li>
-</ul></li>
-<li>Broader Application
-<ul>
-<li>Potential applications in various fields such as finance, environmental management, and health metrics.</li>
-</ul></li>
 </ul>
-</section>
+
+<img data-src="static/interval/results.png" class="r-stretch quarto-figure-center"><p class="caption">Accuracy of the proposed methods on meteorological data</p></section>
 <section class="slide level2">
 
 <h3 id="comparative-insights-fuzzy-clustering-vs.-archetypal-analysis-in-vector-quantization-for-data-compression">Comparative Insights: Fuzzy Clustering vs.&nbsp;Archetypal Analysis in Vector Quantization for Data Compression</h3>
@@ -30220,28 +30170,16 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <img data-src="static/blosc/workflow.png" class="r-stretch quarto-figure-center"><p class="caption">Workflow of the data compression framework</p></section>
 <section class="slide level2">
 
-<h4 id="results-1">Results</h4>
+<h4 id="results-3">Results</h4>
 <ul>
 <li>Compression applied to the <em>Olivetti faces dataset</em> to evaluate explained variability and data reconstruction.</li>
 </ul>
 
-<img data-src="static/blosc/compression_faces.png" class="r-stretch quarto-figure-center"><p class="caption">Comparison of the explained variability between Fuzzy Clustering and Archetypal Analysis</p></section>
-<section class="slide level2">
-
-<h4 id="conclusions-3">Conclusions</h4>
-<ul>
+<img data-src="static/blosc/compression_faces.png" class="r-stretch quarto-figure-center"><p class="caption">Comparison of the explained variability between Fuzzy Clustering and Archetypal Analysis</p><ul>
 <li>Key Findings
 <ul>
-<li>Archetypal Analysis achieves higher explained variability (98.89%) compared to Fuzzy Clustering (80.31%) while maintaining the same compression ratio.</li>
 <li>A plugin machinery for <em>Blosc2</em> was developed to integrate Archetypal Analysis for data compression.</li>
-</ul></li>
-<li>Implications
-<ul>
-<li>AA is more effective in preserving the nuances and details of data, making it a superior choice for high-fidelity image compression.</li>
-</ul></li>
-<li>Broader Application
-<ul>
-<li>The results suggest AA can enhance data compression in various fields dealing with large, complex datasets, offering improved data integrity in compressed outputs.</li>
+<li>Archetypal Analysis achieves higher explained variability (98.89%) compared to Fuzzy Clustering (80.31%) while maintaining the same compression ratio.</li>
 </ul></li>
 </ul>
 </section>
@@ -30288,28 +30226,16 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </section>
 <section class="slide level2">
 
-<h4 id="applications">Applications</h4>
+<h4 id="results-4">Results</h4>
 <ul>
 <li>Tested on simulated data and real-world tasks such as aircraft shapes analysis and electrocardiogram (ECG) analysis.</li>
 </ul>
 
-<img data-src="static/outliers/outliers-2.png" class="r-stretch quarto-figure-center"><p class="caption">ECG analysis example</p></section>
-<section class="slide level2">
-
-<h4 id="conclusions-4">Conclusions</h4>
-<ul>
+<img data-src="static/outliers/outliers-2.png" class="r-stretch quarto-figure-center"><p class="caption">ECG analysis example</p><ul>
 <li>Key Findings
 <ul>
 <li>The FAA + kNN approach outperforms existing methods, especially in detecting outliers within clustered data.</li>
 <li>Achieved high accuracy in both simulated and real-world datasets.</li>
-</ul></li>
-<li>Implications
-<ul>
-<li>Effective for applications in computer vision, signal processing, anomaly detection, remote sensing or medical images.</li>
-</ul></li>
-<li>Broader Application
-<ul>
-<li>Extend to other kind of data (sparse functional data, ordinal and binary data, missing data, etc).</li>
 </ul></li>
 </ul>
 </section>
@@ -30371,29 +30297,16 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </section>
 <section class="slide level2">
 
-<h4 id="evaluation">Evaluation</h4>
+<h4 id="results-5">Results</h4>
 <ul>
 <li>Tested on synthetic data and applied to real datasets in biology, document clustering, and community detection.</li>
 </ul>
 
-<img data-src="static/biaa/enron-adjacency-matrix-sorted.png" class="r-stretch quarto-figure-center"><p class="caption">Community detection example</p></section>
-<section class="slide level2">
-
-<h4 id="conclusions-5">Conclusions</h4>
-<ul>
+<img data-src="static/biaa/enron-adjacency-matrix-sorted.png" class="r-stretch quarto-figure-center"><p class="caption">Community detection example</p><ul>
 <li>Key Findings
 <ul>
 <li>biAA improves interpretability by identifying extreme archetypes for both rows and columns.</li>
 <li>It offers better performance than traditional biclustering in terms of capturing data extremes.</li>
-</ul></li>
-<li>Implications
-<ul>
-<li>Helps uncover key insights in fields like gene expression analysis, text mining, and community detection.</li>
-</ul></li>
-<li>Broader Application
-<ul>
-<li>Expand biAA to handle more complex datasets, such as defining biarchetypoid analysis.</li>
-<li>Apply biAA to more real-world problems where interpretability of extreme data points is critical.</li>
 </ul></li>
 </ul>
 </section>
@@ -30477,37 +30390,17 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 </section>
 <section class="slide level2">
 
-<h4 id="experiments">Experiments</h4>
+<h4 id="results-6">Results</h4>
 <ul>
-<li>Synthetic datasets
-<ul>
-<li>Simulated data with varying community structures memberships and noise levels.</li>
-</ul></li>
-<li>Real-world datasets
-<ul>
-<li>Restaurants-Users, Drugs-Side Effects, Authors-Publications networks.</li>
-</ul></li>
+<li><p>Synthetic datasets: Simulated data with varying community structures memberships and noise levels.</p></li>
+<li><p>Real-world datasets: Restaurants-Users, Drugs-Side Effects, Authors-Publications networks.</p></li>
 </ul>
 
-<img data-src="static/coclust/restaurants_boxplot.png" class="r-stretch quarto-figure-center"><p class="caption">Restaurant-Users network results</p></section>
-<section class="slide level2">
-
-<h4 id="conclusions-6">Conclusions</h4>
-<ul>
+<img data-src="static/coclust/restaurants_boxplot.png" class="r-stretch quarto-figure-center"><p class="caption">Restaurant-Users network results</p><ul>
 <li>Key Findings
 <ul>
 <li>The new BiAA algorithm outperforms SBM, especially in detecting extremes and handling complex structures.</li>
 <li>Degree correction and soft assignment improve clustering accuracy.</li>
-<li>The new algorithm scales better for large datasets.</li>
-</ul></li>
-<li>Implications
-<ul>
-<li>BiAA’s strengths in extreme detection benefit community detection, network analysis, and recommender systems.</li>
-</ul></li>
-<li>Broader Application
-<ul>
-<li>Apply <span class="math inline">n</span>-dimensional BiAA to biological networks and multi-modal data</li>
-<li>Integrate Variational Autoencoders for enhanced versatility with datasets like images and fMRI.</li>
 </ul></li>
 </ul>
 </section>
@@ -30528,7 +30421,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <p><a href="https://archetypes.readthedocs.io/">https://archetypes.readthedocs.io/</a></p>
 </div></aside></section></section>
 <section>
-<section id="conclusions-7" class="title-slide slide level1 center">
+<section id="conclusions" class="title-slide slide level1 center">
 <h1>Conclusions</h1>
 
 </section>
