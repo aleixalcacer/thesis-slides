@@ -442,7 +442,7 @@ Aleix Alcacer Sales
 <div>
 
 </div>
-<div id="cell-7" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="3">
+<div id="cell-7" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -29844,16 +29844,6 @@ BY2Bl4iIiIgKGgMvERERERU0Bl4iIiIiKmj/H/MV9pL8ON1iAAAAAElFTkSuQmCC\
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<h4 id="alternative-methods">Alternative Methods</h4>
-<ul>
-<li>Cross-Validation: Split data into training and testing sets. Evaluate model performance on unseen data.</li>
-<li>Information Criteria: Use AIC or BIC. Balance goodness of fit and model complexity.</li>
-<li>Domain Knowledge: Leverage domain-specific insights. Guide selection based on expected patterns.</li>
-<li>Stability Analysis: Check consistency across data subsets or through bootstrapping. Ensure a reliable model choice.</li>
-</ul>
-</section>
 <section id="archetypoid-analysis-ada" class="slide level2">
 <h2>Archetypoid Analysis (ADA)</h2>
 <ul>
@@ -29875,7 +29865,7 @@ BY2Bl4iIiIgKGgMvERERERU0Bl4iIiIiKmj/H/MV9pL8ON1iAAAAAElFTkSuQmCC\
 <p>Therefore, each archetypoid <span class="math inline">\bm{Z}_k</span>, i.e.&nbsp;<span class="math inline">\bm{z}^{(k)}</span>, can be represented as</p>
 <p><span class="math display"> \bm{Z}_k = \sum_{n=1}^{N} \bm{{B}}_{k,n} \bm{X}_n </span></p>
 <p>subject to <span class="math inline">\|{\bm{{B}}_k}\|_1 = 1</span> and <span class="math inline">\bm{{B}}_{k,n} \in \{0, 1\}</span>, ensuring that each archetypoid is exactly represented by one data point.</p>
-<div id="cell-26" class="cell" data-execution_count="12">
+<div id="cell-25" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -29889,7 +29879,7 @@ BY2Bl4iIiIgKGgMvERERERU0Bl4iIiIiKmj/H/MV9pL8ON1iAAAAAElFTkSuQmCC\
 <section class="slide level2">
 
 <p>At the same time, each data point <span class="math inline">\bm{X}_n</span>, i.e.&nbsp;<span class="math inline">\bm{x}^{(n)}</span>, is then approximated as a convex combination of these archetypoids <span class="math display"> \bm{X}_n \approx \sum_{k=1}^{K} \bm{{A}}_{n,k} \bm{Z}_k </span> similarly subject to <span class="math inline">\|{\bm{{A}}_n}\|_1 = 1</span> and <span class="math inline">\bm{{A}}_{n,k} \in [0,1]</span>.</p>
-<div id="cell-28" class="cell" data-execution_count="13">
+<div id="cell-27" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -29926,7 +29916,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <div>
 
 </div>
-<div id="cell-34" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="16">
+<div id="cell-33" class="cell quarto-layout-panel" data-execution_count="16" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -29984,7 +29974,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <ul>
 <li>Location Removal: Centered using the Helmert sub-matrix.</li>
 <li>Scale Normalization: Applied via Frobenius norm (centroid size).</li>
-<li>Rotation Removal: Obtained using the Procrustes distance and projections onto the tangent space.</li>
+<li>Rotation Removal: Obtained using the Procrustes algorithm.</li>
 </ul>
 
 <img data-src="static/plosone/pies1.png" class="r-stretch quarto-figure-center"><p class="caption">Three feet with the same shape.</p></section>
@@ -29994,12 +29984,13 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <ul>
 <li>Process
 <ul>
-<li>Identify extreme patterns (archetypal shapes) from data.</li>
+<li>Prject normalized foot scans onto the tangent space.</li>
+<li>Apply ADA to identify extreme patterns (archetypoid shapes) from data.</li>
 <li>Comapre results against traditional clustering techniques.</li>
 </ul></li>
 <li>Key Findings
 <ul>
-<li>The identification of three archetypal foot shapes for both men and women.</li>
+<li>The identification of three archetypoid foot shapes for both men and women.</li>
 <li>Enhanced footwear design to accommodate a wider range of foot shapes.</li>
 </ul></li>
 </ul>
@@ -30035,8 +30026,8 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 
 <h4 id="proposed-methods">Proposed methods</h4>
 <ul>
-<li>CO-methods: Inpute missing data + Classifier.</li>
-<li>EN-methods: Combine results from multiple classifiers.</li>
+<li>CO-methods: CF (imputing missing data) -&gt; POLR (imputed + complete data).</li>
+<li>EN-methods: CF (regression, missing data) + POLR (complete data)</li>
 </ul>
 
 <img data-src="static/mathematics/graph.jpg" class="r-stretch quarto-figure-center"><p class="caption">Overview of the recommended system framework</p></section>
@@ -30313,6 +30304,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <section class="slide level2">
 
 <h3 id="co-clustering-through-a-new-prism-comparing-biarchetypal-analysis-and-stochastic-block-models">Co-Clustering Through a New Prism: Comparing Biarchetypal Analysis and Stochastic Block Models</h3>
+
 <h4 id="objectives-6">Objectives</h4>
 <ul>
 <li>Compare Biarchetypal Analysis (BiAA) with Stochastic Block Models (SBM) for co-clustering.</li>
@@ -30320,7 +30312,10 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <li>Develop a new algorithm for BiAA, optimized for large datasets.</li>
 <li>Extend BiAA to handle <span class="math inline">n</span>-dimensional data for complex, high-dimensional datasets.</li>
 </ul>
-</section>
+<aside><div>
+<p>Co-Clustering Through a New Prism: Comparing Biarchetypal Analysis and Stochastic Block Models. Aleix Alcacer, Morten Morup. Preprint. 2024.</p>
+<p>This work has been carried out within the framework of the “Doctorat Internacional” program at Universitat Jaume I during my research stay at Denmark Technical University.</p>
+</div></aside></section>
 <section class="slide level2">
 
 <h4 id="enhancements">Enhancements</h4>
@@ -30461,6 +30456,10 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <li>Biarchetypal Analysis
 <ul>
 <li>Developed BiAA, offering more interpretable results than biclustering.</li>
+</ul></li>
+<li>BiAA vs.&nbsp;SBM
+<ul>
+<li>New algorithm and small enhancements for BiAA.</li>
 <li>Extended BiAA for n-dimensional datasets using a new algorithm.</li>
 </ul></li>
 <li>Python Package
@@ -30484,9 +30483,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <section class="slide level2">
 
 <h3 id="questions">Questions?</h3>
-<div style="text-align: center;">
-<img data-src="static//thank-you.png" class="r-stretch">
-</div>
+<img data-src="static//thank-you.png" class="r-stretch" style="display: block; margin: 0 auto">
 <div class="quarto-auto-generated-content">
 <p><img src="static/simbol-UJI-color.png" class="slide-logo"></p>
 <div class="footer footer-default">
