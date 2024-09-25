@@ -442,7 +442,7 @@ Aleix Alcacer Sales
 <div>
 
 </div>
-<div id="cell-7" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="3">
+<div id="cell-7" class="cell quarto-layout-panel" data-execution_count="3" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -29846,12 +29846,22 @@ BY2Bl4iIiIgKGgMvERERERU0Bl4iIiIiKmj/H/MV9pL8ON1iAAAAAElFTkSuQmCC\
 </section>
 <section id="archetypoid-analysis-ada" class="slide level2">
 <h2>Archetypoid Analysis (ADA)</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <ul>
 <li>Introduced by Vinué, Epifanio and Alemany in 2015.</li>
 <li>Identifies real data points (archetypoids) as representatives, not convex combinations.</li>
 <li>Easier to understand results since archetypoids are actual data points.</li>
 <li>Ideal for scenarios where interpretability and real-world relevance are crucial. E.g. Countries.</li>
 </ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="static/introduction/country.png"></p>
+<figcaption>Lesotho similarity</figcaption>
+</figure>
+</div>
+</div></div>
 </section>
 <section class="slide level2">
 
@@ -29916,7 +29926,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <div>
 
 </div>
-<div id="cell-33" class="cell quarto-layout-panel" data-layout-ncol="2" data-execution_count="16">
+<div id="cell-33" class="cell quarto-layout-panel" data-execution_count="16" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
@@ -29984,7 +29994,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <ul>
 <li>Process
 <ul>
-<li>Prject normalized foot scans onto the tangent space.</li>
+<li>Project normalized foot scans onto the tangent space.</li>
 <li>Apply ADA to identify extreme patterns (archetypoid shapes) from data.</li>
 <li>Comapre results against traditional clustering techniques.</li>
 </ul></li>
@@ -30002,8 +30012,8 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 
 <h4 id="objectives-1">Objectives</h4>
 <ul>
-<li>Develop a hybrid approach combining classification methods and user-based collaborative filtering for accurate footwear size recommendation.</li>
-<li>Improve size prediction by integrating 3D foot measurements, user preferences, and past purchases, improving both accuracy and user satisfaction in online footwear purchases.</li>
+<li><p>Improve size prediction by integrating 3D foot measurements, user preferences, and past purchases, improving both accuracy and user satisfaction in online footwear purchases.</p></li>
+<li><p>Develop a hybrid approach combining classification methods and user-based collaborative filtering for accurate footwear size recommendation.</p></li>
 </ul>
 <aside><div>
 <p>Combining classification and user-based collaborative filtering for matching footwear size. Aleix Alcacer Sales, Irene Epifanio López, Jorge Valero, Alfredo Ballester. MATHEMATICS. Num. 7. Vol. 9. 2021.</p>
@@ -30015,10 +30025,12 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <li>36 right foot scans from Spanish men using a low-cost 3D foot digitizer (DomeScan).</li>
 <li>Features
 <ul>
-<li>Foot Measurements: Includes variables like Foot Length (FL), Ball Width (BW), and Instep Height (IH).</li>
-<li>User Preference: Estimation whether the user prefers a tight, normal, or loose fit.</li>
-<li>Past Purchases: Historical data on footwear size and user satisfaction.</li>
+<li>Foot Measurements (FM): Includes variables like Foot Length (FL), Ball Width (BW), and Instep Height (IH).</li>
+<li>User Preference (UP): Estimation whether the user prefers a tight, normal, or loose fit.</li>
+<li>Past Purchases (PP): Historical data on footwear size and user satisfaction.
+<ul>
 <li>Missing Data: 29% of past purchases had missing size information.</li>
+</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -30026,8 +30038,8 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 
 <h4 id="proposed-methods">Proposed methods</h4>
 <ul>
-<li>CO-methods: CF (imputing missing data) -&gt; POLR (imputed + complete data).</li>
-<li>EN-methods: CF (regression, missing data) + POLR (complete data)</li>
+<li>CO-methods: CF (imputing PP (IPP)) -&gt; POLR (IPP + FM + UP).</li>
+<li>EN-methods: CF (regression PP) + POLR (FM + UP)</li>
 </ul>
 
 <img data-src="static/mathematics/graph.jpg" class="r-stretch quarto-figure-center"><p class="caption">Overview of the recommended system framework</p></section>
@@ -30182,8 +30194,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <div class="columns">
 <div class="column" style="width:65%;">
 <ul>
-<li>Develop a methodology for detecting outliers in clustered functional data, a situation in which previous methods have shown limitations as it is really challenging.</li>
-<li>Extend the <em>AA + kNN</em> technique to handle multivariate and multi-argument functions.</li>
+<li>Develop a methodology for detecting outliers in clustered functional data, a situation in which previous methods have shown limitations.</li>
 <li>Apply the method to real-world image and signal processing tasks.</li>
 </ul>
 </div><div class="column" style="width:35%;">
@@ -30226,7 +30237,6 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <li>Key Findings
 <ul>
 <li>The FAA + kNN approach outperforms existing methods, especially in detecting outliers within clustered data.</li>
-<li>Achieved high accuracy in both simulated and real-world datasets.</li>
 </ul></li>
 </ul>
 </section>
@@ -30235,27 +30245,23 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <h3 id="biarchetype-analysis-simultaneous-learning-of-observations-and-features-based-on-extremes">Biarchetype Analysis: Simultaneous Learning of Observations and Features Based on Extremes</h3>
 
 <h4 id="objectives-5">Objectives</h4>
+<div class="columns">
+<div class="column" style="width:55%;">
 <ul>
 <li>Introduce Biarchetype Analysis (biAA) to identify archetypes in both rows (observations) and columns (features) simultaneously.</li>
 <li>Provide a more interpretable alternative to biclustering, focusing on extreme values in data for better insight.</li>
 </ul>
-<aside><div>
-<p>Biarchetype Analysis: Simultaneous Learning of Observations and Features Based on Extremes. Aleix Alcacer, Irene Epifanio, Ximo Gual-Arnau. IEEE Transactions on Pattern Analysis and Machine Intelligence. 2024.</p>
-</div></aside></section>
-<section class="slide level2">
-
-<h4 id="model-framework">Model framework</h4>
-<ul>
-<li>Extend Archetype Analysis (AA) to obtain arcehtypes in both observations and features.</li>
-<li>Despite being similar to biclustering, biAA focuses on archetypes instead of centroids, providing more interpretable results.</li>
-</ul>
+</div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="static/biaa/scheme.png" style="width:60.0%"></p>
+<p><img data-src="static/biaa/scheme.png"></p>
 <figcaption>Biarchetype Analysis framework</figcaption>
 </figure>
 </div>
-</section>
+</div></div>
+<aside><div>
+<p>Biarchetype Analysis: Simultaneous Learning of Observations and Features Based on Extremes. Aleix Alcacer, Irene Epifanio, Ximo Gual-Arnau. IEEE Transactions on Pattern Analysis and Machine Intelligence. 2024.</p>
+</div></aside></section>
 <section class="slide level2">
 
 <h4 id="formal-definition-2">Formal definition</h4>
@@ -30290,7 +30296,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 
 <h4 id="results-5">Results</h4>
 <ul>
-<li>Tested on synthetic data and applied to real datasets in biology, document clustering, and community detection.</li>
+<li>Tested on synthetic data and applied to real datasets such as gen expression data, document clustering, and community detection.</li>
 </ul>
 
 <img data-src="static/biaa/enron-adjacency-matrix-sorted.png" class="r-stretch quarto-figure-center"><p class="caption">Community detection example</p><ul>
@@ -30308,9 +30314,7 @@ x^{(n)}(t) = \sum_{m=1}^M \bm{C}_{n,m} j^{(m)}(t) = \bm{C}_n^\top \bm{J}(t)
 <h4 id="objectives-6">Objectives</h4>
 <ul>
 <li>Compare Biarchetypal Analysis (BiAA) with Stochastic Block Models (SBM) for co-clustering.</li>
-<li>Introduce hard assignment and degree correction to enhance co-clustering performance.</li>
-<li>Develop a new algorithm for BiAA, optimized for large datasets.</li>
-<li>Extend BiAA to handle <span class="math inline">n</span>-dimensional data for complex, high-dimensional datasets.</li>
+<li>Extend BiAA to handle <span class="math inline">n</span>-dimensional datasets.</li>
 </ul>
 <aside><div>
 <p>Co-Clustering Through a New Prism: Comparing Biarchetypal Analysis and Stochastic Block Models. Aleix Alcacer, Morten Morup. Preprint. 2024.</p>
